@@ -10,6 +10,17 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+add_executable(task_1 src/task_1.cpp)
+add_executable(task_2 src/task_2.cpp)
+add_executable(task_3 src/task_3_main.cpp)
+
+
+
+target_link_libraries(task_1)
+target_link_libraries(task_2)
+target_link_libraries(task_3)
+
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -18,3 +18,4 @@ How i set up the ros2 package system:
 4. modify the CMakelist,txt using install(DIRECTORY) launch and urdf
 5. colcon build to compile all of the files in the packages (inside the assignment_ws folder)
 6. ros2 launch module_3_assignment rviz.launch.py or gazebo-launch.py to launch all of the nodes (inside the assignment_ws/packages folder)
+7. Set up all of the configuration on rviz2

@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<robot name="mobile_manipulator">
+
+  <!-- Link definitions -->
+  <!-- <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.1"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.1"/>
+      </geometry>
+    </collision>
+  </link> -->
+
+  <link name="frame_down_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.5"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.5"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="frame_middle_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.5"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.5"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="frame_up_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.5"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.5"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="finger_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.3"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="base">
+    <visual>
+      <geometry>
+        <box size="0.75 0.4 0.1"/>
+      </geometry>
+      <material name="gray">
+        <color rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <collision>
+      <geometry>
+        <box size="0.75 0.4 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wheel_right_link">
+    <inertial>
+      <mass value="2" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+      <contact_coefficients mu="1" kp="1e+13" kd="1.0"/>
+    </collision>
+  </link>
+
+  <link name="wheel_left_link">
+    <inertial>
+      <mass value="2" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.15" length="0.1"/>
+      </geometry>
+      <contact_coefficients mu="1" kp="1e+13" kd="1.0"/>
+    </collision>
+  </link>
+
+  <link name="steering">
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.05 0.04 0.01" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.04 0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="camera">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.05"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar">
+    <inertial>
+      <mass value="0.5" />
+      <inertia ixx="0.01" ixy="0.0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joints -->
+  <joint name="frame_base_joint" type="continuous">
+    <parent link="base"/>
+    <child link="frame_down_link"/>
+    <origin xyz="0.0 0.0 0.25" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
+  <joint name="frame_down_joint" type="revolute">
+    <parent link="frame_down_link"/>
+    <child link="frame_middle_link"/>
+    <origin xyz="0.1 0.0 0.25" rpy="1.57 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <limit effort="10" velocity="1.0" lower="-0.5" upper="0.7" />
+  </joint>
+
+  <joint name="frame_middle_joint" type="revolute">
+    <parent link="frame_middle_link"/>
+    <child link="frame_up_link"/>
+    <origin xyz="0.1 0.0 0.25" rpy="1.57 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <limit effort="10" velocity="1.0" lower="-0.5" upper="0.7" />
+  </joint>
+
+  <joint name="finger_joint" type="prismatic">
+    <parent link="frame_up_link"/>
+    <child link="finger_link"/>
+    <origin xyz="0.0 0.0 0.30" rpy="1.57 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="10" velocity="1.0" lower="-0.2" upper="0.2" />
+  </joint>
+
+  <joint name="wheel_left_joint" type="continuous">
+    <origin xyz="0.2 -0.25 0.0" rpy="1.57 0.0 0.0"/>
+    <parent link="steering"/>
+    <child link="wheel_left_link"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
+  <joint name="wheel_right_joint" type="continuous">
+    <origin xyz="0.2 0.25 0.0" rpy="1.57 0.0 0.0"/>
+    <parent link="steering"/>
+    <child link="wheel_right_link"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
+  <joint name="steering_joint" type="revolute">
+    <origin xyz="0.2 0.0 -0.07" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0 0 1" />
+    <parent link="base"/>
+    <child link="steering"/>
+    <limit effort="10" velocity="1.0" lower="-0.2" upper="0.2" />
+
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="-0.35 0 0.01" rpy="0 0.0 3.14"/>
+    <parent link="base"/>
+    <child link="camera"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="-0.285 0 0.075" rpy="0 0.0 1.57"/>
+    <parent link="base"/>
+    <child link="lidar"/>
+    <axis xyz="0.0 0.0 1.0"/>
+  </joint>
+
+  <!-- <joint name="steering_right_joint" type="fixed">
+    <parent link="steering"/>
+    <child link="steering"/>
+    <origin xyz="0.2 0.25 0.0" rpy="1.57 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <joint name="steering_left_joint" type="fixed">
+    <parent link="steering"/>
+    <child link="wheel_left_link"/>
+    <origin xyz="0.2 -0.25 0.0" rpy="1.57 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint> -->
+
+  <!-- Gazebo Plugin -->
+  <gazebo>
+    <plugin name="ackermann_steering_controller" filename="libgazebo_ros_ackermann_drive.so">
+      <ros>
+        <namespace>/</namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <robotNamespace/>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <!-- <left_steering_joint>steering_left_joint</left_steering_joint>
+      <right_steering_joint>steering_right_joint</right_steering_joint> -->
+      <left_wheel_joint>wheel_left_joint</left_wheel_joint>
+      <right_wheel_joint>wheel_right_joint</right_wheel_joint>
+      <wheel_separation>0.4</wheel_separation>
+      <wheel_radius>0.2</wheel_radius>
+      <wheel_base>1.0</wheel_base>
+      <steering_angle_max>0.5</steering_angle_max>
+      <cmd_vel_topic>cmd_vel</cmd_vel_topic>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base</robot_base_frame>
+      <publish_odometry>true</publish_odometry>
+      <publish_odometry_tf>true</publish_odometry_tf>
+    </plugin>
+  </gazebo>
+
+</robot>

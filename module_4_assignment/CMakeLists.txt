@@ -7,9 +7,40 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+add_executable(task_1 src/task1.cpp)
+ament_target_dependencies(task_1 rclcpp sensor_msgs geometry_msgs cv_bridge)
+target_link_libraries(task_1 ${OpenCV_LIBS})
+
+add_executable(task_3 src/task3.cpp)
+ament_target_dependencies(task_3 rclcpp sensor_msgs)
+
+add_executable(task_4 src/task4.cpp)
+ament_target_dependencies(task_4 rclcpp sensor_msgs geometry_msgs)
+
+
+install(TARGETS
+ task_1
+ task_3
+ task_4
+  DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY
+  launch
+  world
+  DESTINATION share/${PROJECT_NAME})
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

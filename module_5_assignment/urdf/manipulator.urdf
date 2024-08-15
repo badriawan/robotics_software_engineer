@@ -105,7 +105,7 @@
 
 
   <!-- Joints -->
-  <joint name="frame_base_joint" type="continuous">
+  <joint name="frame_base_joint" type="fixed">
     <parent link="base"/>
     <child link="frame_down_link"/>
     <origin xyz="0.0 0.0 0.25" rpy="0.0 0.0 1.5"/>
@@ -136,5 +136,63 @@
     <limit effort="10" velocity="1.0" lower="-0.2" upper="0.2" />
   </joint>
  
+
+  <ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+
+  <joint name="frame_down_joint">
+
+    <command_interface name="position">
+      <param name="min">-5</param>
+      <param name="max">5</param>
+    </command_interface>
+
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+
+    <state_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+
+  <joint name="frame_middle_joint">
+
+    <command_interface name="position">
+      <param name="min">-5</param>
+      <param name="max">5</param>
+    </command_interface>
+
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+
+    <state_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+
+  <joint name="finger_joint">
+
+    <command_interface name="position">
+      <param name="min">0</param>
+      <param name="max">3</param>
+    </command_interface>
+
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+
+    <state_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+</ros2_control>
+
+<gazebo>
+  <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+    <parameters>/home/yusuf/assignment_ws/robotics_software_engineer/module_5_assignment/config/position_controller.yaml</parameters>
+  </plugin>
+</gazebo>
+
 
 </robot>

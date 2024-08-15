@@ -13,9 +13,9 @@ def generate_launch_description():
     urdf = os.path.join(pkg_path,'urdf','manipulator.urdf')
 
     return LaunchDescription([
-        # ExecuteProcess(
-        # cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'],
-        # output='screen'),
+        ExecuteProcess(
+        cmd=['gazebo', '--verbose', '-s', 'libgazebo_ros_factory.so'],
+        output='screen'),
 
         Node(
             package='robot_state_publisher',
@@ -24,34 +24,34 @@ def generate_launch_description():
             output='screen',
             arguments=[urdf]
         ),
-        Node(
-            package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui',
-            name='joint_state_publisher',
-            output='screen',
-            arguments=[urdf]
-        ),
+        # Node(
+        #     package='joint_state_publisher_gui',
+        #     executable='joint_state_publisher_gui',
+        #     name='joint_state_publisher',
+        #     output='screen',
+        #     arguments=[urdf]
+        # ),
        
          # Spawn the robot entity in Gazebo simulation from the URDF topic
 
-        # Node(
-        #     package='gazebo_ros',
-        #     executable='spawn_entity.py',
-        #     name='robot_spawner',
-        #     output='screen',
-        #     arguments=["-topic", "/robot_description", "-entity", "manipulator_bot"]),
+        Node(
+            package='gazebo_ros',
+            executable='spawn_entity.py',
+            name='robot_spawner',
+            output='screen',
+            arguments=["-topic", "/robot_description", "-entity", "manipulator_bot"]),
 
-        # Node(
-        #     package='controller_manager',
-        #     executable='spawner',
-        #     output='screen',
-        #     arguments=["velocity_controller"]),
+        Node(
+            package='controller_manager',
+            executable='spawner',
+            output='screen',
+            arguments=["position_controller"]),
         
-        # Node(
-        #     package='controller_manager',
-        #     executable='spawner',
-        #     output='screen',
-        #     arguments=["joint_state_broadcaster"]),
+        Node(
+            package='controller_manager',
+            executable='spawner',
+            output='screen',
+            arguments=["joint_state_broadcaster"]),
 
 
     ])

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Robotics Software Engineer Learning Path
 Complete software based curriculum is designed to take you through the foundational and advanced concepts of robotics software engineering using ROS2, C++, and other critical technologies in the field. Below, you'll find a structured path to guide your learning journey. Each module contains a brief overview of its learning outcomes to help you understand what skills and knowledge you'll gain upon completion.
 
@@ -16,6 +17,11 @@ To run modules, you can check out our detailed [Wiki](https://github.com/Robotis
 
 ### Contact Us
 For any inquiries, feel free to reach out at `info@robotisim.com`
+=======
+# Robotics Software Engineer Learning Path Curriculum
+For students enrolled in RSE learnign path , You have to complete these assignments and push on to your github.
+Then you will provide your repository link in Assignments location of learning path
+>>>>>>> test
 
 ## License
 This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. This license allows others to remix, tweak, and build upon the work non-commercially, as long as they credit the owner (robotisim) and license their new creations under the identical terms.

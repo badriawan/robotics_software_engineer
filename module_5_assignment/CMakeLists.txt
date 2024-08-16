@@ -10,6 +10,8 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+set(EIGEN_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/../../extern/eigen)
+find_package(Eigen3 REQUIRED)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -20,6 +22,7 @@ find_package(tf2_ros REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(angles REQUIRED)
 
 
 
@@ -43,15 +46,26 @@ add_executable(task_2 src/task2.cpp)
 ament_target_dependencies(task_2 rclcpp std_msgs geometry_msgs nav_msgs tf2_ros)
 target_link_libraries(task_2 ${OpenCV_LIBS})
 
+add_library(lqr_lib STATIC src/lqr_lib.cpp)
+target_include_directories(lqr_lib PRIVATE ${EIGEN_INCLUDE_DIR} include)
+target_link_libraries(lqr_lib Eigen3::Eigen)
+
+add_executable(lqr_node src/lqr_node.cpp)
+target_link_libraries(lqr_node lqr_lib Eigen3::Eigen)
+ament_target_dependencies(lqr_node rclcpp nav_msgs geometry_msgs tf2 angles)
+target_include_directories(lqr_node PRIVATE ${EIGEN_INCLUDE_DIR} include)
 
 install(TARGETS
   task_1
   task_2
+  lqr_lib
+  lqr_node
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY
   launch
   urdf
+  config
   DESTINATION share/${PROJECT_NAME})
 
 ament_package()

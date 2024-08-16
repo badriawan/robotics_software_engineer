@@ -25,7 +25,7 @@ public:
     this->declare_parameter<double>("goal_x", 0.0);
     this->declare_parameter<double>("goal_y", 0.0);
     
-    this->declare_parameter<double>("Kp_dist", 0.5);
+    this->declare_parameter<double>("Kp_dist", 2);
     this->declare_parameter<double>("Ki_dist", 0.0);
     this->declare_parameter<double>("Kd_dist", 0.0);
     
@@ -55,7 +55,7 @@ private:
     RCLCPP_INFO(this->get_logger(), "Battery = '%d' ", energy);
 
     theta = getYaw(odom->pose.pose.orientation);
-    RCLCPP_INFO(this->get_logger(), "Pose x: '%f' Pose y: '%f'", _x, _y);
+    //RCLCPP_INFO(this->get_logger(), "Pose x: '%f' Pose y: '%f'", _x, _y);
 
     goal_x = get_parameter("goal_x").as_double();
     goal_y = get_parameter("goal_y").as_double();
@@ -78,7 +78,7 @@ private:
     double A = atan2(goal_y - _y, goal_x - _x);
     A = atan2(sin(A), cos(A));
     double EA = A - theta;
-    RCLCPP_INFO(this->get_logger(), "ED: '%f' , EA: '%f' ", ED, EA);
+    //RCLCPP_INFO(this->get_logger(), "ED: '%f' , EA: '%f' ", ED, EA);
             
     ED = std::max(0.0, std::min(ED, 0.5));
     EA = std::max(-1.0, std::min(EA, 1.0));
@@ -87,7 +87,8 @@ private:
     integral += ED * dt;
     double Derivative = (ED - prev_ED) / dt;
 
-    controller = Kp_dist * ED + Ki_dist * integral + Kd_dist * Derivative;
+    //controller = Kp_dist * ED + Ki_dist * integral + Kd_dist * Derivative;
+    controller = Kp_dist * ED + Ki_dist * integral;
     error_a = Kp_angle * EA;
 
     prev_ED = ED;
@@ -101,6 +102,7 @@ private:
     if (std::abs(controller) > _threshold_d){
       cmd.linear.x = controller;
       cmd.angular.z = error_a;
+      RCLCPP_INFO(this->get_logger(), "velocities '%f' ", cmd.linear.x);
     } else {
       cmd.linear.x = 0.0;
       cmd.angular.z = 0.0;

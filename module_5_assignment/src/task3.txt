@@ -1,0 +1,2 @@
+just run the node that contains manipulator urdf with ros2 position controller( manipulator.launch.py)
+then run the publisher of position data (ros2 topic pub /position_controller/commands std_msgs/msg/Float64MultiArray "{data: [-0.2, -0.2, 0.2]}")

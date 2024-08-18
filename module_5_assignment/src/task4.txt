@@ -1,0 +1,9 @@
+First, launch the turtlebot3 empty world.
+i the other terminal, run : ros2 run module_5_assignment lqr_node
+in the third terminal , run : ros2 run rqt_gui rqt_gui with dynamic configurastion and visualization of odom linear topic.
+
+
+
+
+To check the result , kindly check LQR folder 
+when 

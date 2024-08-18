@@ -4,6 +4,8 @@
 #include <rclcpp/logging.hpp>
 #include <tuple>
 #include <vector>
+#include <nav_msgs/msg/path.hpp>
+
 
 input input_old = input(0, 0);
 
@@ -18,8 +20,9 @@ LqrNode::LqrNode()
   control_loop_timer_ = this->create_wall_timer(std::chrono::milliseconds(30),
                         std::bind(&LqrNode::controlLoopCallback, this));
 
+
   Q_ << 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8;
-  R_ << 0.8, 0, 0, 0.8;
+  R_ << 1.5, 0, 0, 1.5;
   lqr_ = std::make_unique<LQR>(Q_, R_, 100);
 
   waypoints_ = {State(1, 1, M_PI / 4), State(2, 2, M_PI / 2),
@@ -90,9 +93,9 @@ void LqrNode::controlLoopCallback() {
                             desired_state.theta);
   state_error_ = x_actual - x_desired;
 
-  if (current_waypoint == 2) {
-    waypoints_[current_waypoint + 1] = State(-1, 3, M_PI);
-  }
+  // if (current_waypoint == 2) {
+  //   waypoints_[current_waypoint + 1] = State(-1, 3, M_PI);
+  // }
 
   RCLCPP_INFO(rclcpp::get_logger("LQR"), "Current Waypoint:=%d ",current_waypoint);
   RCLCPP_INFO(rclcpp::get_logger("LQR"), "Actual state: x=%f, y=%f, theta=%f",x_actual(0), x_actual(1), x_actual(2));
@@ -125,6 +128,8 @@ void LqrNode::controlLoopCallback() {
       publishVelocity(0.0, 0.0);
     }
   }
+
+ 
 
 }
 

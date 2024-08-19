@@ -40,14 +40,14 @@
 
 - Last assignment is implementation of LQR robots using different penalties value in Q and R matriks
 
-### <b>Project Tree</b>
+<!-- ### <b>Project Tree</b>
 <p align="center">
 <img src = "doc/tree.PNG?raw=true" center=true width="35%"/>
 </p>
 
 </details>
 
-<details close>
+<details close> -->
 <summary> <b>Assignments and Solutions<b></summary>
 
 

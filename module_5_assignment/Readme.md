@@ -8,7 +8,7 @@
 
 ### Assignment 3 - Task 3b: Build a Mobile Robot with Ackerman Steering Drive
 <p align="center">
-<img src = "doc/manipulator.mp4?raw=true" center=true width="55%"/>
+<img src = "doc/manipulator.gif?raw=true" center=true width="55%"/>
 </p>
 
 <!-- ### Assignment 3 - Task 1: Create a Custom Transform Tree

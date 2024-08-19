@@ -1,12 +1,12 @@
 # Assignments for Module #5 : Control Systems 
 
-### Assignment 3 - Task 2: PID controller with battery health
+### Assignment 5 - Task 2: PID controller for mobile robot with battery health indicator
 -PID -Task2
 <p align="center">
 <img src = "doc/PIDcontrol.png?raw=true" center=true width="55%"/>
 </p> -->
 
-### Assignment 3 - Task 3b: Build a Mobile Robot with Ackerman Steering Drive
+### Assignment 5 - Task 3: Build a Manipulator Robot using Position Controller
 <p align="center">
 <img src = "doc/manipulator.gif?raw=true" center=true width="55%"/>
 </p>

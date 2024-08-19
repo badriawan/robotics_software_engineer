@@ -5,5 +5,14 @@ in the third terminal , run : ros2 run rqt_gui rqt_gui with dynamic configurasti
 
 
 
-To check the result , kindly check LQR folder 
-when 
+To check the graph result , kindly check LQR folder
+    The graph illustrates relationship betweem marices Q and R penalties on LQR controller model through differential mobile robot. The x axis refers to timestep in seconds unit
+then the Y axis represents odom topic messages in position x for blue line and position y for the red one. The robot move from one checlpoint and another using velocities v and w 
+as an input.The checlpoints in coordinates x and y are ; 1,1 ; 2,2 ; 3,3 ; 4,4 then return to the start psotion at 0,0.
+    Based on the graph's plot, the default value of the penalties is 0.8 .Additionally, this value create the default movement of robot as well as the graph showed.Next , when
+i tried to increase the value of Q penalties, there are no significant change.Otherwise , when Q penalties reduce,the error position of the robots increase with the similar 
+value of velocities and time travel.Futhermore, the factor of R penalties value also generate an essential point for the controller.First, if we decrease the value of penalties,
+the robots become unstable .However , if we rise up the value of R penalties, the robot is going to more significantly stable.
+    In conclusion, determining the LQR controller Q and R matirces is generated a crucial effect for the controller.For more information, I didn't apply more high tuned value
+due to the limitation of time. Last but not least, We have to make sure our value of Q and R in proper value by trial and error to optimize the best controller. 
+

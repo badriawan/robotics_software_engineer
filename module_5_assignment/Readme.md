@@ -1,14 +1,21 @@
-# Assignments for Module #5 : Control Systems
+# Assignments for Module #5 : Control Systems 
 
+### Assignment 3 - Task 2: PID controller with battery health
+-PID -Task2
+<p align="center">
+<img src = "doc/PIDcontrol.png?raw=true" center=true width="55%"/>
+</p> -->
 
-
-# Assignments for Module #3 : Robot structure with URDF
+### Assignment 3 - Task 3b: Build a Mobile Robot with Ackerman Steering Drive
+<p align="center">
+<img src = "doc/manipulator.mp4?raw=true" center=true width="55%"/>
+</p>
 
 <!-- ### Assignment 3 - Task 1: Create a Custom Transform Tree
 <p align="center">
 <img src = "doc/task1_robotic_arm.gif?raw=true" center=true width="55%"/>
 </p>
-
+<!-- 
 ### Assignment 3 - Task 2: Add Joints and Visual Elements
 <p align="center">
 <img src = "doc/task2_robotic_arm.gif?raw=true" center=true width="55%"/>
@@ -17,12 +24,9 @@
 ### Assignment 3 - Task 3a: Build a Mobile Manipulator
 <p align="center">
 <img src = "doc/task3a_mobile_arm.gif?raw=true" center=true width="55%"/>
-</p>
-
-### Assignment 3 - Task 3b: Build a Mobile Robot with Ackerman Steering Drive
-<p align="center">
-<img src = "doc/task3b_ackerman.gif?raw=true" center=true width="55%"/>
 </p> -->
+
+
 
 
 <details open>
@@ -172,7 +176,6 @@ Your contributions are always welcome! Please feel free to fork and modify the c
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/yusufbadriawan)
 [<img src="https://img.shields.io/badge/telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>](https://t.me/yusufbadriawan)
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/yusufbadriawan)
-[<img src="https://img.shields.io/badge/tiktok-%23000000.svg?&style=for-the-badge&logo=tiktok&logoColor=white" />](https://www.linkedin.com/in/yusufbadriawan)
 [<img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" />](mailto:yusufbadriawan@gmail.com)
 
 </p

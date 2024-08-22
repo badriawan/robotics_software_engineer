@@ -5,6 +5,8 @@
 ### Assignment 1 - Task 1: Robot Class Implementations
 ### Assignment 1 - Task 2: Simulating Sensor Readings
 ### Assignment 1 - Task 3: Sensor Library Design
+### The Result
+
 <p align="center">
 <img src = "doc/task1.png?raw=true" center=true width="55%"/>
 </p> -->

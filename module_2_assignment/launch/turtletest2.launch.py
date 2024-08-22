@@ -37,7 +37,7 @@ def generate_launch_description():
     task_21=Node(
     package = 'module_2_assignment',
     executable = 'task_2',
-    name = 'task_2 1',
+    name = 'task_21',
     # namespace= 'task_21'
     )
    
@@ -45,7 +45,7 @@ def generate_launch_description():
     task_22=Node(
     package = 'module_2_assignment',
     executable = 'task_2',
-    name = 'task_2 2',
+    name = 'task_22',
     #namespace= 'task_22'
     parameters= [
 
@@ -57,7 +57,7 @@ def generate_launch_description():
     task_23=Node(
     package = 'module_2_assignment',
     executable = 'task_2',
-    name = 'task_2 3',
+    name = 'task_23',
     #namespace= 'task_22'
     parameters= [
 

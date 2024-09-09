@@ -18,8 +18,6 @@ class DriveTurtle : public rclcpp::Node
     DriveTurtle()
     : Node("drive_turtle"), count_(0)
     {
-    //   this->declare_parameter<std::string>("cmd_vel_topic","/turtle1/cmd_vel");
-    //   std::string cmd_vel_topic = this->get_parameter("cmd_vel_topic").as_string();
 
       publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
       timer_ = this->create_wall_timer(
@@ -29,16 +27,8 @@ class DriveTurtle : public rclcpp::Node
   private:
     void timer_callback()
     {
-    auto message = geometry_msgs::msg::Twist();
-    //   if (forward_){
-    //     message.linear.x = 0.5;
-    //   }
-    //   else{
-    //     message.linear.x = -0.5;
-    //   }
-
-    //   forward_ = !forward_;
-    //   message.angular.z = 0.5;
+      auto message = geometry_msgs::msg::Twist();
+   
       message.linear.x = 0.5;
       float r = 2; //radius
       message.angular.z = message.linear.x/r;

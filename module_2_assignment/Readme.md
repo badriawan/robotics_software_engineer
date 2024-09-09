@@ -34,7 +34,16 @@ Develop a launch file to run the Turtlesim simulation and the custom node simult
 Document the node and launch file creation process, including code and execution results.
 - **Learning Outcome**: Understand the development and execution of custom nodes and the utility of launch files in ROS2.
 
+- **Problem**:
+In this case, the turtle robot must move in circular motion using ROS2 publisher implementation. The main problem is how to move a robot effectively using velocicities to produce circular motion with radius input.
+
 - **Solutions**:
+By breakdown this spesific problem using analysis thinking and proper mindset. There are four steps which i must completed first when i want to solve this problem.
+
+
+
+
+
 How i make the nodes :
 1. Start with making files task 1.cpp
 2. Then imclude the libraries for the node such as geometry msgs , std msgs and rclcpp

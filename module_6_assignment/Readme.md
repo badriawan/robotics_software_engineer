@@ -3,7 +3,7 @@
 
 ### Assignment - Task 1: Sensor Fusion using EKF for GPS and IMU Data 
 <p align="center">
-<img src = "doc/LF.gif?raw=true" center=true width="55%"/>
+<img src = "doc/navsat.gif?raw=true" center=true width="55%"/>
 </p> -->
 
 

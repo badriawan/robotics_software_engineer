@@ -32,18 +32,18 @@ find_package(Eigen3 REQUIRED)
 
 
 
-add_library(ekf_lib src/ekf_lib.cpp)
-target_include_directories(ekf_lib PRIVATE ${EIGEN3_INCLUDE_DIR} include)
-target_link_libraries(ekf_lib Eigen3::Eigen)
+# add_library(ekf_lib src/ekf_lib.cpp)
+# target_include_directories(ekf_lib PRIVATE ${EIGEN3_INCLUDE_DIR} include)
+# target_link_libraries(ekf_lib Eigen3::Eigen)
 
-add_executable(ekf_node src/ekf_node.cpp)
-target_include_directories(ekf_node PRIVATE include)
-target_link_libraries(ekf_node ekf_lib)
-ament_target_dependencies(ekf_node rclcpp sensor_msgs visualization_msgs)
+# add_executable(ekf_node src/ekf_node.cpp)
+# target_include_directories(ekf_node PRIVATE include)
+# target_link_libraries(ekf_node ekf_lib)
+# ament_target_dependencies(ekf_node rclcpp sensor_msgs visualization_msgs)
 
 
 install(TARGETS
- ekf_node
+#  ekf_node
   DESTINATION lib/${PROJECT_NAME})
   
 install(DIRECTORY

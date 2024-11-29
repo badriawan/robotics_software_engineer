@@ -8,7 +8,7 @@
 
 ### Assignment - Task 2: Understanding Inputs and Outputs for 2D and 3D Mapping 
 <p align="center">
-<img src = "doc/rtabmap.gif?raw=true" center=true width="55%"/>
+<img src = "doc/rtab_map.gif?raw=true" center=true width="55%"/>
 </p> -->
 
 

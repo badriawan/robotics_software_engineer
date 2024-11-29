@@ -244,6 +244,17 @@ This document provides a detailed explanation of inputs and outputs in the mappi
 | **Applications**    | Robot navigation in structured areas.                             | Robotics in outdoor, dynamic, or uneven terrains.                           |
 
 ---
+<p align="center">
+<img src = "doc/slam_graph.png?raw=true" center=true width="55%"/>
+</p> -->
+
+<p align="center">
+<img src = "doc/rtab_graph.png?raw=true" center=true width="55%"/>
+</p> -->
+
+<p align="center">
+<img src = "doc/tf.jpg?raw=true" center=true width="55%"/>
+</p> -->
 
 ## **Conclusion**
 Understanding the roles of inputs and outputs in mapping processes is crucial for selecting the right tools and methods for specific environments. While 2D mapping is effective for simpler, flat terrains, 3D mapping provides a richer and more detailed representation of complex environments.
